@@ -17,14 +17,15 @@ export default function AboutPage() {
         <section className="mt-8">
           <h2 className="text-xl font-semibold text-slate-900">Wer wir sind</h2>
           <p className="mt-4 leading-relaxed text-slate-600">
-            Rescue Smart ist ein deutsches Unternehmen, das sich auf konforme
-            Erste-Hilfe-Ausbildung nach DGUV sowie FeV für Unternehmen und
-            Organisationen spezialisiert hat. Unsere Trainer kommen aus dem
-            aktiven Rettungsdienst und bringen jahrelange Einsatzerfahrung in
-            jede Schulung ein. Seit unserer Gründung haben wir tausende
-            Teilnehmer erfolgreich ausgebildet und ihnen das nötige Wissen und
-            Selbstvertrauen vermittelt, um in Notfallsituationen richtig zu
-            handeln.
+            Rescue Smart steht für fundierte Erste-Hilfe-Ausbildung aus einer
+            Hand - getragen von echter Einsatzerfahrung und interdisziplinärer
+            Fachkompetenz. Hinter Rescue Smart steht eine Person: hauptberuflich
+            Physiotherapeutin, staatlich geprüfte Kinderpflegerin und
+            ehrenamtliche Rettungssanitäterin bei verschiedenen
+            Hilfsorganisationen im Rettungsdienst. Als zertifizierte
+            MHFA-Ersthelfer- und MHFA-Youth-Ersthelfer-Trainerin verbindet sie
+            körperliche und psychische Gesundheit in ihrer Arbeit und befähigt
+            Menschen, in Notfallsituationen kompetent und sicher zu handeln.
           </p>
         </section>
 
@@ -33,11 +34,13 @@ export default function AboutPage() {
             Unsere Mission
           </h2>
           <p className="mt-4 leading-relaxed text-slate-600">
-            Wir glauben, dass jeder Mensch in der Lage sein sollte, in einer
-            Notsituation Erste Hilfe zu leisten. Unsere Mission ist es,
-            lebensrettendes Wissen verständlich, praxisnah und zugänglich zu
-            vermitteln - ob im Unternehmen, in Bildungseinrichtungen oder im
-            Alltag.
+            Erste Hilfe bedeutet mehr als das Beherrschen von Handgriffen. Die
+            Mission von Rescue Smart ist es, lebensrettendes Wissen ganzheitlich
+            zu vermitteln - körperlich wie psychisch. Durch den
+            interdisziplinären Hintergrund als Physiotherapeutin,
+            Kinderpflegerin, Rettungssanitäterin und MHFA-Trainerin entsteht ein
+            einzigartiger Ansatz, der medizinisches Fachwissen, praktische
+            Einsatzerfahrung und einfühlsame Pädagogik vereint.
           </p>
         </section>
 
@@ -45,21 +48,20 @@ export default function AboutPage() {
           <h2 className="text-xl font-semibold text-slate-900">
             Unsere Erfahrung
           </h2>
-          <div className="mt-6 grid gap-6 sm:grid-cols-3">
-            <div className="rounded-xl bg-primary-50 p-6 text-center">
-              <p className="text-3xl font-bold text-primary-700">10+</p>
-              <p className="mt-1 text-sm text-slate-600">Jahre Erfahrung</p>
-            </div>
-            <div className="rounded-xl bg-primary-50 p-6 text-center">
-              <p className="text-3xl font-bold text-primary-700">5.000+</p>
-              <p className="mt-1 text-sm text-slate-600">
-                Geschulte Teilnehmer
-              </p>
-            </div>
-            <div className="rounded-xl bg-primary-50 p-6 text-center">
-              <p className="text-3xl font-bold text-primary-700">200+</p>
-              <p className="mt-1 text-sm text-slate-600">Firmenkunden</p>
-            </div>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            {[
+              "Physiotherapeutin (staatlich anerkannt)",
+              "Staatlich geprüfte Kinderpflegerin",
+              "Ehrenamtliche Rettungssanitäterin",
+              "MHFA-Ersthelferin (Erwachsene & Jugendliche)",
+            ].map((qual) => (
+              <div
+                key={qual}
+                className="rounded-xl bg-primary-50 px-5 py-4 text-sm font-medium text-primary-700"
+              >
+                {qual}
+              </div>
+            ))}
           </div>
         </section>
 
@@ -69,11 +71,12 @@ export default function AboutPage() {
           </h2>
           <ul className="mt-4 space-y-3">
             {[
-              "Trainer aus dem aktiven Rettungsdienst und der Notfallmedizin",
-              "DGUV-zertifizierte Kurse, die alle gesetzlichen Anforderungen erfüllen",
-              "Flexible Termine und Inhouse-Schulungen bundesweit",
-              "Realistische Szenarien und praxisnahe Übungen",
-              "Zertifikat am selben Tag – ohne Wartezeit",
+              "Aktive Einsatzerfahrung im Rettungsdienst - kein reines Theoriewissen",
+              "Interdisziplinäre Kompetenz: Physiotherapie, Pädagogik und Notfallmedizin in einer Person",
+              "Zertifizierte MHFA-Trainerin für Erwachsene und Jugendliche",
+              "Einfühlsame Wissensvermittlung dank pädagogischer Ausbildung als Kinderpflegerin",
+              "DGUV-konforme Kurse, die alle gesetzlichen Anforderungen erfüllen",
+              "Flexible Termine und individuelle Inhouse-Schulungen",
             ].map((item) => (
               <li key={item} className="flex items-start gap-3 text-slate-600">
                 <svg

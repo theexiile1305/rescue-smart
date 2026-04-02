@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const navLinks = [
   { href: "/", label: "Startseite" },
@@ -19,11 +20,15 @@ export function Navbar() {
         aria-label="Hauptnavigation"
         className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8"
       >
-        <Link
-          href="/"
-          className="text-xl font-bold text-primary-800 transition-colors hover:text-primary-600"
-        >
-          Rescue<span className="text-accent-600"> Smart</span>
+        <Link href="/" aria-label="Rescue Smart - Startseite">
+          <Image
+            src="/logo.png"
+            alt="Rescue Smart"
+            width={400}
+            height={120}
+            priority
+            className="h-28 w-auto"
+          />
         </Link>
 
         {/* Desktop nav */}
