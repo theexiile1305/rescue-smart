@@ -21,7 +21,7 @@ export function Footer() {
               alt="Rescue Smart"
               width={320}
               height={100}
-              className="h-24 w-auto brightness-0 invert"
+              className="h-20 w-auto brightness-0 invert"
             />
             <p className="mt-2 text-sm">
               Exzellente Erste-Hilfe-Ausbildung für Unternehmen &amp;
