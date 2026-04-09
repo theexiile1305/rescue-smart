@@ -71,10 +71,31 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 border-t border-slate-700 pt-8 text-center text-sm">
+        <div className="mt-8 flex flex-col items-start justify-between gap-4 border-t border-slate-700 pt-8 text-sm sm:flex-row sm:items-center">
           <p>
             &copy; {new Date().getFullYear()} Rescue Smart. Alle Rechte
             vorbehalten.
+          </p>
+          <p>
+            Built with ❤️ by{" "}
+            <a
+              href="https://github.com/theexiile1305"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-white"
+            >
+              theexiile1305
+            </a>
+            . Please report any issues at{" "}
+            <a
+              href="https://github.com/theexiile1305/rescue-smart/issues"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-white"
+            >
+              GitHub
+            </a>
+            .
           </p>
         </div>
       </div>
