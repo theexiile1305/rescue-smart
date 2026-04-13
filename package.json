@@ -39,8 +39,7 @@
   },
   "pnpm": {
     "onlyBuiltDependencies": [
-      "sharp",
-      "unrs-resolver"
+      "@swc/core",
     ]
   }
 }
