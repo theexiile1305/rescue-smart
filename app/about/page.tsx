@@ -22,10 +22,10 @@ export default function AboutPage() {
             Fachkompetenz. Hinter Rescue Smart steht eine Person: hauptberuflich
             Physiotherapeutin, staatlich geprüfte Kinderpflegerin und
             ehrenamtliche Rettungssanitäterin bei verschiedenen
-            Hilfsorganisationen im Rettungsdienst. Als zertifizierte
-            MHFA-Ersthelfer- und MHFA-Youth-Ersthelfer-Trainerin verbindet sie
-            körperliche und psychische Gesundheit in ihrer Arbeit und befähigt
-            Menschen, in Notfallsituationen kompetent und sicher zu handeln.
+            Hilfsorganisationen im Rettungsdienst. Als zertifizierte MHFA- und
+            MHFA-Youth-Ersthelferin verbindet sie körperliche und psychische
+            Gesundheit in ihrer Arbeit und befähigt Menschen, in
+            Notfallsituationen kompetent und sicher zu handeln.
           </p>
         </section>
 
@@ -35,12 +35,13 @@ export default function AboutPage() {
           </h2>
           <p className="mt-4 leading-relaxed text-slate-600">
             Erste Hilfe bedeutet mehr als das Beherrschen von Handgriffen. Die
-            Mission von Rescue Smart ist es, lebensrettendes Wissen ganzheitlich
-            zu vermitteln - körperlich wie psychisch. Durch den
+            Mission von Rescue Smart ist es, lebensrettendes Wissen - physisch
+            als auch psychisch - ganzheitlich zu vermitteln. Durch den
             interdisziplinären Hintergrund als Physiotherapeutin,
-            Kinderpflegerin, Rettungssanitäterin und MHFA-Trainerin entsteht ein
-            einzigartiger Ansatz, der medizinisches Fachwissen, praktische
-            Einsatzerfahrung und einfühlsame Pädagogik vereint.
+            Kinderpflegerin, Rettungssanitäterin und MHFA- sowie
+            MHFA-Youth-Ersthelferin entsteht ein einzigartiger Ansatz, der
+            medizinisches Fachwissen, praktische Einsatzerfahrung und
+            einfühlsame Pädagogik vereint.
           </p>
         </section>
 
@@ -53,7 +54,9 @@ export default function AboutPage() {
               "Physiotherapeutin (staatlich anerkannt)",
               "Staatlich geprüfte Kinderpflegerin",
               "Ehrenamtliche Rettungssanitäterin",
-              "MHFA-Ersthelferin (Erwachsene & Jugendliche)",
+              "MHFA-Ersthelferin (Erwachsene)",
+              "Rettungsschwimmerin",
+              "MHFA-Youth-Ersthelferin (Jugendliche)",
             ].map((qual) => (
               <div
                 key={qual}
@@ -73,9 +76,9 @@ export default function AboutPage() {
             {[
               "Aktive Einsatzerfahrung im Rettungsdienst - kein reines Theoriewissen",
               "Interdisziplinäre Kompetenz: Physiotherapie, Pädagogik und Notfallmedizin in einer Person",
-              "Zertifizierte MHFA-Trainerin für Erwachsene und Jugendliche",
+              "Zertifizierte MHFA-Ersthelferin für Erwachsene und Jugendliche",
               "Einfühlsame Wissensvermittlung dank pädagogischer Ausbildung als Kinderpflegerin",
-              "DGUV-konforme Kurse, die alle gesetzlichen Anforderungen erfüllen",
+              "DGUV sowie FeV konforme Kurse, die alle gesetzlichen Anforderungen erfüllen",
               "Flexible Termine und individuelle Inhouse-Schulungen",
             ].map((item) => (
               <li key={item} className="flex items-start gap-3 text-slate-600">

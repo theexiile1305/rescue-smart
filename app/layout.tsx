@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: "%s | Rescue Smart",
   },
   description:
-    "Rescue Smart bietet konforme Erste-Hilfe-Ausbildung nach DGUV sowie Fev für Unternehmen und Führerschein-Kurse. Exzellente Schulungen aus der Praxis für die Praxis.",
+    "Rescue Smart bietet konforme Erste-Hilfe-Ausbildung nach DGUV sowie FeV für Unternehmen und Führerschein-Kurse. Exzellente Schulungen aus der Praxis für die Praxis.",
   openGraph: {
     type: "website",
     locale: "de_DE",

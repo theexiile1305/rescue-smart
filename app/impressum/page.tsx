@@ -69,7 +69,7 @@ export default function ImpressumPage() {
             </h2>
             <p className="mt-2 text-sm">
               Durchführung von Erste-Hilfe-Ausbildungen und -Fortbildungen gemäß
-              § 26, DGUV Vorschrift 1, Fev sowie weitere Dienstleistungen im
+              § 26, DGUV Vorschrift 1, FeV sowie weitere Dienstleistungen im
               Bereich der Ersten Hilfe.
             </p>
             <p className="text-sm">

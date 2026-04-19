@@ -6,7 +6,7 @@ const faqItems = [
   {
     question: "Sind Ihre Kurse DGUV bzw. FeV anerkannt?",
     answer:
-      "Ja, alle unsere betrieblichen Erste-Hilfe-Kurse sind von der DGUV (Deutsche Gesetzliche Unfallversicherung) offiziell anerkannt und erfüllen die Anforderungen der DGUV Vorschrift 1.",
+      "Ja, alle unsere betrieblichen Erste-Hilfe-Kurse sind von der DGUV (Deutsche Gesetzliche Unfallversicherung) sowie der FeV (Fahrerlaubnis-Verordnung) offiziell anerkannt und erfüllen die dafür nötigen Anforderungen.",
   },
   {
     question: "Wie lange ist das Zertifikat gültig?",
@@ -14,9 +14,10 @@ const faqItems = [
       "Das Zertifikat für betriebliche Ersthelfer ist 2 Jahre gültig. Danach ist eine Fortbildung (9 UE) erforderlich. Die Bescheinigung für den Führerschein ist unbegrenzt gültig.",
   },
   {
-    question: "Wie lange dauert ein Kurs?",
+    question:
+      "Wie lange dauert ein Erste-Hilfe-Kurs im Kontext der DGUV bzw. FeV?",
     answer:
-      "Die Kurse umfassen 9 bzw. 16 Unterrichtseinheiten (à 45 Minuten) je nach Anforderung und finden in der Regel an einem bzw. zwei Tag(en) statt.",
+      "Die Kurse umfassen 9 Unterrichtseinheiten (à 45 Minuten) je nach Anforderung und finden an einem Tag statt.",
   },
   {
     question: "Was kostet ein Erste-Hilfe-Kurs?",
@@ -51,7 +52,7 @@ const faqItems = [
   {
     question: "Wie viele Teilnehmer sind in einem Kurs?",
     answer:
-      "Unsere Kurse haben maximal 20 Teilnehmer, um eine optimale Betreuung und ausreichend Praxiszeit für jeden zu gewährleisten.",
+      "Unsere Kurse haben maximal 20 Teilnehmende, um eine optimale Betreuung und ausreichend Praxiszeit für jeden zu gewährleisten.",
   },
 ];
 

@@ -1,28 +1,28 @@
 import { CourseCard } from "@/components/icons/CourseCard";
 import { FaqSection } from "@/components/FaqSection";
 import Link from "next/link";
-import FirstAidIcon from "@/components/icons/FirstAidIcon";
+import HardHatIcon from "@/components/icons/HardHatIcon";
 import RefreshIcon from "@/components/icons/RefreshIcon";
 import BoltIcon from "@/components/icons/BoltIcon";
 import CarIcon from "@/components/icons/CarIcon";
 
 const services = [
   {
-    title: "Ausbildung betriebliche Ersthelfer",
+    title: "Ausbildung betriebliche Ersthelfende",
     description:
-      "DGUV-konforme Grundausbildung (9 UE) für Ersthelfer in Unternehmen. Vermittelt alle notwendigen Kenntnisse zur Erstversorgung bei Arbeitsunfällen.",
+      "DGUV-konforme Grundausbildung für Ersthelfende in Unternehmen. Vermittelt alle notwendigen Kenntnisse zur Erstversorgung bei Arbeitsunfällen.",
     features: [
       "DGUV Vorschrift 1 konform",
       "9 Unterrichtseinheiten",
       "Zertifikat am selben Tag",
       "Inhouse-Schulung möglich",
     ],
-    icon: <FirstAidIcon />,
+    icon: <HardHatIcon />,
   },
   {
-    title: "Fortbildung betriebliche Ersthelfer",
+    title: "Fortbildung betriebliche Ersthelfende",
     description:
-      "Auffrischung und Vertiefung der Kenntnisse für bereits ausgebildete betriebliche Ersthelfer. Pflicht alle 2 Jahre gemäß DGUV.",
+      "Auffrischung und Vertiefung der Kenntnisse für bereits ausgebildete betriebliche Ersthelfende. Pflicht alle 2 Jahre gemäß DGUV.",
     features: [
       "Alle 2 Jahre erforderlich",
       "9 Unterrichtseinheiten",
@@ -37,14 +37,14 @@ const services = [
       "Pflicht-Kurs für alle Führerscheinklassen gemäß § 19 FeV. Vermittelt grundlegende Kenntnisse für Notfälle im Straßenverkehr und Alltag.",
     features: [
       "Für alle Führerscheinklassen",
-      "9 bzw. 16 Unterrichtseinheiten",
+      "9 Unterrichtseinheiten",
       "Sofortige Bescheinigung",
       "Wochenendtermine verfügbar",
     ],
     icon: <CarIcon />,
   },
   {
-    title: "AED-Einweisung & Notfalltraining",
+    title: "AED-Simulation & Notfalltraining",
     description:
       "Spezialisierte Schulungen für medizinische Einrichtungen, Feuerwehr und Organisationen mit besonderen Anforderungen.",
     features: [
@@ -74,7 +74,7 @@ const whyRescueSmart = [
       "Ob Wochentag, Wochenende oder Inhouse. Wir passen uns Ihrem Zeitplan an.",
   },
   {
-    title: "Anerkennung nach DGUV und Fev",
+    title: "Anerkennung nach DGUV und FeV",
     description:
       "Alle unsere betrieblichen Kurse sind von der DGUV sowie FeV anerkannt und erfüllen die gesetzlichen Anforderungen.",
   },
@@ -159,7 +159,7 @@ export default function Home() {
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-primary-100">
             Exzellente Erste-Hilfe-Ausbildung für Unternehmen &amp;
-            Organisationen. Konforme Kurse nach DGUV sowie Fev aus der Praxis
+            Organisationen. Konforme Kurse nach DGUV sowie FeV aus der Praxis
             für die Praxis.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -247,7 +247,7 @@ export default function Home() {
                 className="rounded-2xl bg-slate-50 p-6"
               >
                 <p className="text-sm leading-relaxed text-slate-600">
-                  &ldquo;{t.quote}&rdquo;
+                  &ldquo;<i>{t.quote}</i>&rdquo;
                 </p>
                 <footer className="mt-4">
                   <p className="text-sm font-semibold text-slate-900">

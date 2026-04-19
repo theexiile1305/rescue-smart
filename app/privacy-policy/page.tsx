@@ -33,7 +33,7 @@ export default function PrivacyPolicyPage() {
             <p className="mt-2">
               Die verwendeten Begriffe sind nicht geschlechtsspezifisch.
             </p>
-            <p className="mt-2">Stand: 2. April 2026</p>
+            <p className="mt-2">Stand: 19. April 2026</p>
           </section>
 
           {/* Inhaltsübersicht */}

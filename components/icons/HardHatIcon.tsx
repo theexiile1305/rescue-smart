@@ -1,4 +1,4 @@
-export default function FirstAidIcon() {
+export default function HardHatIcon() {
   return (
     <svg
       className="h-6 w-6"
@@ -11,7 +11,7 @@ export default function FirstAidIcon() {
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
-        d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+        d="M5 13C5 8 8 5 12 5s7 3 7 8M2 13h20v2H2z"
       />
     </svg>
   );
