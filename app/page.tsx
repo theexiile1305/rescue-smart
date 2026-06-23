@@ -71,7 +71,7 @@ const whyRescueSmart = [
   {
     title: "Flexible Termine",
     description:
-      "Ob Wochentag, Wochenende oder Inhouse. Wir passen uns Ihrem Zeitplan an.",
+      "Ob Wochentag oder Wochenende. Wir passen uns Ihrem Zeitplan an.",
   },
   {
     title: "Anerkennung nach DGUV und FeV",
