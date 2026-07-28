@@ -1,12 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
+import { business, fullAddress } from "@/content/site-config";
 
 const quickLinks = [
   { href: "/", label: "Startseite" },
-  { href: "/about", label: "Über uns" },
-  { href: "/contact", label: "Kontakt" },
+  { href: "/einsatzgebiet", label: "Einsatzgebiet" },
+  { href: "/ratgeber", label: "Ratgeber" },
+  { href: "/ueber-uns", label: "Über uns" },
+  { href: "/kontakt", label: "Kontakt" },
   { href: "/impressum", label: "Impressum" },
-  { href: "/privacy-policy", label: "Datenschutz" },
+  { href: "/datenschutz", label: "Datenschutz" },
 ];
 
 export function Footer() {
@@ -28,24 +31,23 @@ export function Footer() {
               Organisationen. Kurse aus der Praxis für die Praxis.
             </p>
             <address className="mt-4 text-sm not-italic">
-              <p>Wolfratshauser Str. 15</p>
-              <p>82335 Berg, Deutschland</p>
+              <p>{fullAddress}</p>
               <p className="mt-1">
                 Tel:{" "}
                 <a
-                  href="tel:+4981714808856"
+                  href={`tel:${business.telephone}`}
                   className="transition-colors hover:text-white"
                 >
-                  +49 (0) 817 148 088 56
+                  {business.telephoneDisplay}
                 </a>
               </p>
               <p>
                 E-Mail:{" "}
                 <a
-                  href="mailto:rescuesmart@anabellehofner.de"
+                  href={`mailto:${business.email}`}
                   className="transition-colors hover:text-white"
                 >
-                  rescuesmart@anabellehofner.de
+                  {business.email}
                 </a>
               </p>
             </address>

@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
+import { business, fullAddress } from "@/content/site-config";
 
 export default function ContactPage() {
   const [name, setName] = useState("");
@@ -33,13 +35,30 @@ export default function ContactPage() {
   return (
     <div className="px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-2xl">
-        <h1 className="text-3xl font-bold text-slate-900 sm:text-4xl">
+        <h1 className="font-display text-3xl font-bold text-primary-800 sm:text-4xl">
           Kontakt
         </h1>
         <p className="mt-4 text-slate-600">
           Haben Sie Fragen zu unseren Kursen oder möchten Sie ein individuelles
           Angebot? Schreiben Sie uns. Wir melden uns so schnell wie möglich bei
           Ihnen.
+        </p>
+        <p className="mt-2 text-sm text-slate-600">
+          Noch unsicher, welcher Kurs passt?{" "}
+          <Link
+            href="/#leistungen"
+            className="font-medium text-primary-700 underline hover:text-primary-800"
+          >
+            Zur Kursübersicht
+          </Link>{" "}
+          oder direkt zu unserem{" "}
+          <Link
+            href="/einsatzgebiet"
+            className="font-medium text-primary-700 underline hover:text-primary-800"
+          >
+            Einsatzgebiet
+          </Link>
+          .
         </p>
 
         <form onSubmit={handleSubmit} className="mt-8 space-y-6">
@@ -130,10 +149,10 @@ export default function ContactPage() {
               <dt className="font-medium text-slate-700">Telefon</dt>
               <dd>
                 <a
-                  href="tel:+4981714808856"
+                  href={`tel:${business.telephone}`}
                   className="transition-colors hover:text-primary-700"
                 >
-                  +49 (0) 817 148 088 56
+                  {business.telephoneDisplay}
                 </a>
               </dd>
             </div>
@@ -141,16 +160,16 @@ export default function ContactPage() {
               <dt className="font-medium text-slate-700">E-Mail</dt>
               <dd>
                 <a
-                  href="mailto:rescuesmart@anabellehofner.de"
+                  href={`mailto:${business.email}`}
                   className="transition-colors hover:text-primary-700"
                 >
-                  rescuesmart@anabellehofner.de
+                  {business.email}
                 </a>
               </dd>
             </div>
             <div>
               <dt className="font-medium text-slate-700">Adresse</dt>
-              <dd>Wolfratshasuer Str. 15, 8235 Berg, Deutschland</dd>
+              <dd>{fullAddress}</dd>
             </div>
           </dl>
         </div>
