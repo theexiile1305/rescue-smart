@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { courseList } from "@/content/courses";
@@ -16,6 +16,30 @@ const navLinks = [
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const servicesRef = useRef<HTMLLIElement>(null);
+
+  useEffect(() => {
+    if (!isServicesOpen) return;
+
+    function handlePointerDown(event: MouseEvent) {
+      if (!servicesRef.current?.contains(event.target as Node)) {
+        setIsServicesOpen(false);
+      }
+    }
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setIsServicesOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isServicesOpen]);
 
   return (
     <header className="sticky top-0 z-40 border-b border-sand-300 bg-paper/95 backdrop-blur-sm">
@@ -44,11 +68,7 @@ export function Navbar() {
               Startseite
             </Link>
           </li>
-          <li
-            className="relative"
-            onMouseEnter={() => setIsServicesOpen(true)}
-            onMouseLeave={() => setIsServicesOpen(false)}
-          >
+          <li className="relative" ref={servicesRef}>
             <button
               type="button"
               aria-expanded={isServicesOpen}
