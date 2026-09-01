@@ -1,4 +1,4 @@
-export default function RefreshIcon({
+export default function MapPinIcon({
   className = "h-6 w-6",
 }: {
   className?: string;
@@ -15,7 +15,12 @@ export default function RefreshIcon({
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
-        d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.992 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182M20.016 4.356v4.992"
+        d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+      />
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
       />
     </svg>
   );

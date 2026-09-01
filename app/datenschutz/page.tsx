@@ -1,16 +1,19 @@
 /* eslint-disable react/no-unescaped-entities */
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
+import { business } from "@/content/site-config";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Datenschutzerklärung",
   description: "Datenschutzerklärung der Rescue Smart gemäß DSGVO.",
-};
+  path: "/datenschutz",
+});
 
 export default function PrivacyPolicyPage() {
   return (
     <div className="px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-3xl">
-        <h1 className="text-3xl font-bold text-slate-900 sm:text-4xl">
+        <h1 className="font-display text-3xl font-bold text-primary-800 sm:text-4xl">
           Datenschutzerklärung
         </h1>
 
@@ -131,20 +134,20 @@ export default function PrivacyPolicyPage() {
             <p className="mt-2">
               Rescue Smart
               <br />
-              Wolfratshauser Str. 15
+              {business.streetAddress}
               <br />
-              8235 Berg
+              {business.postalCode} {business.addressLocality}
             </p>
             <p className="mt-2">
-              Vertretungsberechtigte Personen: Anabelle Hof
+              Vertretungsberechtigte Personen: Anabelle Hofner
             </p>
             <p className="mt-2">
               E-Mail-Adresse:{" "}
               <a
-                href="mailto:rescuesmart@anabellehofner.de"
+                href={`mailto:${business.email}`}
                 className="hover:text-primary-700 underline"
               >
-                rescuesmart@anabellehofner.de
+                {business.email}
               </a>
             </p>
             <p className="mt-2">
@@ -1146,7 +1149,7 @@ export default function PrivacyPolicyPage() {
             </ul>
           </section>
 
-          <p className="mt-4 text-xs text-slate-400">
+          <p className="mt-4 text-xs text-slate-600">
             Erstellt mit kostenlosem Datenschutz-Generator.de von Dr. Thomas
             Schwenke
           </p>

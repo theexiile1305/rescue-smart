@@ -1,4 +1,4 @@
-export default function RefreshIcon({
+export default function PhoneIcon({
   className = "h-6 w-6",
 }: {
   className?: string;
@@ -15,7 +15,7 @@ export default function RefreshIcon({
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
-        d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.992 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182M20.016 4.356v4.992"
+        d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a2.25 2.25 0 002.25-2.25v-1.372a1.5 1.5 0 00-1.006-1.417l-3.4-1.213a1.5 1.5 0 00-1.618.42l-.72.867a11.25 11.25 0 01-5.09-5.09l.867-.72a1.5 1.5 0 00.42-1.618l-1.213-3.4a1.5 1.5 0 00-1.417-1.006H4.5A2.25 2.25 0 002.25 6.75z"
       />
     </svg>
   );
