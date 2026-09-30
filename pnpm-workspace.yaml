@@ -4,9 +4,3 @@ allowBuilds:
   "@swc/core": false
   sharp: false
   unrs-resolver: false
-overrides:
-  "postcss": ">=8.5.10"
-  "uuid": ">=11.1.1"
-  "@babel/core": ">=7.29.6"
-  "js-yaml": ">=5.2.2"
-  "sharp": ">=0.35.0"
