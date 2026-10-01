@@ -17,7 +17,7 @@
     "resend": "6.31.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "3.3.5",
+    "@eslint/eslintrc": "3.3.7",
     "@jest/types": "29.6.3",
     "@swc/core": "1.15.18",
     "@swc/jest": "0.2.39",
