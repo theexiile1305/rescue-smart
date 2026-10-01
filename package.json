@@ -19,7 +19,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "3.3.7",
     "@jest/types": "29.6.3",
-    "@swc/core": "1.15.18",
+    "@swc/core": "1.16.12",
     "@swc/jest": "0.2.39",
     "@tailwindcss/postcss": "4.2.1",
     "@testing-library/jest-dom": "6.9.1",
