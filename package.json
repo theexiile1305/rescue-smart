@@ -22,7 +22,7 @@
     "@swc/core": "1.16.12",
     "@swc/jest": "0.2.39",
     "@tailwindcss/postcss": "4.3.3",
-    "@testing-library/jest-dom": "6.9.1",
+    "@testing-library/jest-dom": "7.0.1",
     "@testing-library/react": "16.3.3",
     "@testing-library/user-event": "14.6.7",
     "@types/jest": "29.5.14",
