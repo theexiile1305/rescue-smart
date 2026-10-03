@@ -1,36 +1,51 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { buildMetadata } from "@/lib/metadata";
+import { trainerName } from "@/content/site-config";
 
-export const metadata: Metadata = {
-  title: "Über uns",
+export const metadata: Metadata = buildMetadata({
+  title: "Über uns - Erste-Hilfe-Trainerin",
   description:
-    "Erfahren Sie mehr über Rescue Smart - Ihr Partner für konforme Erste-Hilfe-Ausbildung nach DGUV sowie FeV in Deutschland.",
-};
+    "Physiotherapeutin, Rettungssanitäterin und MHFA-Trainerin: Lernen Sie die Fachfrau hinter Rescue Smart und ihre Ausbildungsphilosophie kennen.",
+  path: "/ueber-uns",
+});
 
 export default function AboutPage() {
   return (
     <div className="px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-3xl">
-        <h1 className="text-3xl font-bold text-slate-900 sm:text-4xl">
-          Über uns
+        <h1 className="font-display text-3xl font-bold text-primary-800 sm:text-4xl">
+          Über Rescue Smart — und die Trainerin dahinter
         </h1>
 
         <section className="mt-8">
-          <h2 className="text-xl font-semibold text-slate-900">Wer wir sind</h2>
+          <h2 className="font-display text-xl font-semibold text-primary-800">
+            Wer wir sind
+          </h2>
           <p className="mt-4 leading-relaxed text-slate-600">
             Rescue Smart steht für fundierte Erste-Hilfe-Ausbildung aus einer
             Hand - getragen von echter Einsatzerfahrung und interdisziplinärer
             Fachkompetenz. Hinter Rescue Smart steht eine Person: hauptberuflich
-            Physiotherapeutin, staatlich geprüfte Kinderpflegerin und
-            ehrenamtliche Rettungssanitäterin bei verschiedenen
-            Hilfsorganisationen im Rettungsdienst. Als zertifizierte MHFA- und
-            MHFA-Youth-Ersthelferin verbindet sie körperliche und psychische
-            Gesundheit in ihrer Arbeit und befähigt Menschen, in
-            Notfallsituationen kompetent und sicher zu handeln.
+            Physiotherapeutin, staatlich geprüfte Kinderpflegerin und mit
+            langjähriger Einsatzerfahrung ehrenamtliche Rettungssanitäterin bei
+            verschiedenen Hilfsorganisationen im Rettungsdienst. Als
+            zertifizierte MHFA- und MHFA-Youth-Ersthelferin verbindet sie
+            körperliche und psychische Gesundheit in ihrer Arbeit und befähigt
+            Menschen, in Notfallsituationen kompetent und sicher zu handeln —
+            ein Hintergrund, der besonders Unternehmen mit erhöhten
+            Anforderungen an{" "}
+            <Link
+              href="/aed-notfalltraining"
+              className="font-medium text-primary-700 underline hover:text-primary-800"
+            >
+              AED- und Notfalltraining
+            </Link>{" "}
+            zugutekommt.
           </p>
         </section>
 
         <section className="mt-10">
-          <h2 className="text-xl font-semibold text-slate-900">
+          <h2 className="font-display text-xl font-semibold text-primary-800">
             Unsere Mission
           </h2>
           <p className="mt-4 leading-relaxed text-slate-600">
@@ -46,7 +61,7 @@ export default function AboutPage() {
         </section>
 
         <section className="mt-10">
-          <h2 className="text-xl font-semibold text-slate-900">
+          <h2 className="font-display text-xl font-semibold text-primary-800">
             Unsere Erfahrung
           </h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -69,7 +84,7 @@ export default function AboutPage() {
         </section>
 
         <section className="mt-10">
-          <h2 className="text-xl font-semibold text-slate-900">
+          <h2 className="font-display text-xl font-semibold text-primary-800">
             Warum RescueSmart?
           </h2>
           <ul className="mt-4 space-y-3">
@@ -100,6 +115,23 @@ export default function AboutPage() {
               </li>
             ))}
           </ul>
+        </section>
+
+        <section className="mt-10 rounded-xl bg-paper-muted p-6">
+          <p className="text-sm text-slate-600">
+            <span className="font-semibold text-primary-800">
+              Autorin der Ratgeber-Artikel:
+            </span>{" "}
+            {trainerName} teilt ihr Fachwissen auch im{" "}
+            <Link
+              href="/ratgeber"
+              className="font-medium text-primary-700 underline hover:text-primary-800"
+            >
+              Rescue-Smart-Ratgeber
+            </Link>{" "}
+            — praxisnahe Antworten rund um Ersthelferpflichten und
+            Erste-Hilfe-Kurse.
+          </p>
         </section>
       </div>
     </div>
