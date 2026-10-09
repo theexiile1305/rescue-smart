@@ -1,7 +1,11 @@
-export default function BoltIcon() {
+export default function BoltIcon({
+  className = "h-6 w-6",
+}: {
+  className?: string;
+}) {
   return (
     <svg
-      className="h-6 w-6"
+      className={className}
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth={1.5}
