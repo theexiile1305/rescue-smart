@@ -1,29 +1,103 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary-50: #eff6ff;
-  --color-primary-100: #dbeafe;
-  --color-primary-200: #bfdbfe;
-  --color-primary-300: #93c5fd;
-  --color-primary-400: #60a5fa;
-  --color-primary-500: #3b82f6;
-  --color-primary-600: #2563eb;
-  --color-primary-700: #1d4ed8;
-  --color-primary-800: #1e40af;
-  --color-primary-900: #1e3a8a;
+  /* Petrol — primary/trust. Anchored so primary-800 = brand hex #0e3b3c. */
+  --color-primary-50: #ecefef;
+  --color-primary-100: #d0d9d9;
+  --color-primary-200: #b4c2c3;
+  --color-primary-300: #99acac;
+  --color-primary-400: #7d9596;
+  --color-primary-500: #617f7f;
+  --color-primary-600: #456869;
+  --color-primary-700: #2a5252;
+  --color-primary-800: #0e3b3c;
+  --color-primary-900: #061b1b;
 
-  --color-accent-50: #fef2f2;
-  --color-accent-100: #fee2e2;
-  --color-accent-200: #fecaca;
-  --color-accent-300: #fca5a5;
-  --color-accent-400: #f87171;
-  --color-accent-500: #ef4444;
-  --color-accent-600: #dc2626;
-  --color-accent-700: #b91c1c;
-  --color-accent-800: #991b1b;
-  --color-accent-900: #7f1d1d;
+  /* Alarm red — CTA/urgency. Anchored so accent-500 = brand hex #e2502a.
+     Contrast note (verified against WCAG 2.1 AA, 4.5:1 for normal text):
+     the raw brand hex only reaches 3.5-3.9:1 as text or a white-on-bg button,
+     so accent-500 is decorative-only (icons, borders, large/bold headline
+     accents - all of which only need the 3:1 large-text/non-text threshold).
+     Use accent-600 for solid CTA buttons carrying white label text (5.0:1)
+     and accent-700 for red text links / focus outlines on paper (6.0:1). */
+  --color-accent-50: #fdf1ee;
+  --color-accent-100: #f7d1c7;
+  --color-accent-200: #f2b1a0;
+  --color-accent-300: #ed9078;
+  --color-accent-400: #e77051;
+  --color-accent-500: #e2502a;
+  --color-accent-600: #c34524;
+  --color-accent-700: #a43a1e;
+  --color-accent-800: #852f19;
+  --color-accent-900: #662413;
+
+  /* Sand — secondary surfaces. Anchored so sand-200 = brand hex #e7e2cf. */
+  --color-sand-50: #fdfdfb;
+  --color-sand-100: #f2efe5;
+  --color-sand-200: #e7e2cf;
+  --color-sand-300: #d5d0bf;
+  --color-sand-400: #c3beae;
+  --color-sand-500: #b1ad9e;
+  --color-sand-600: #9e9b8e;
+  --color-sand-700: #8c897e;
+  --color-sand-800: #7a776d;
+  --color-sand-900: #68665d;
+
+  /* Hazard yellow — sparing accent only. Anchored so hazard-400 = brand hex
+     #f0b429. Contrast note: fails as text/foreground at every reasonable
+     size (1.7:1 on paper) - use for backgrounds, borders, and icon fills
+     only, always paired with a petrol (never white) foreground. */
+  --color-hazard-50: #fef9ee;
+  --color-hazard-100: #fae8bd;
+  --color-hazard-200: #f7d68b;
+  --color-hazard-300: #f3c55a;
+  --color-hazard-400: #f0b429;
+  --color-hazard-500: #d6a024;
+  --color-hazard-600: #bb8c20;
+  --color-hazard-700: #a1791b;
+  --color-hazard-800: #866517;
+  --color-hazard-900: #6c5112;
+
+  /* Paper — background. */
+  --color-paper: #f4f5ef;
+  --color-paper-muted: #eceee6;
+
+  /* Typography */
+  --font-display: var(--font-heading), "Archivo", sans-serif;
+  --font-sans: var(--font-body), "Inter", sans-serif;
+  --font-mono: var(--font-jbmono), "JetBrains Mono", monospace;
 }
 
 html {
-  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-accent-700);
+  outline-offset: 2px;
+}
+
+/* Archivo is a variable font with a `wdth` axis; next/font loads it with
+   axes: ["wdth"], and font-stretch maps directly onto that axis per the
+   CSS Fonts Level 4 spec — this is what gives headings the "Expanded" look
+   the brief asks for (Archivo Expanded isn't a distinct exported family). */
+.font-display {
+  font-stretch: 125%;
 }

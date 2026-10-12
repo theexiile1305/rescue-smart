@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
+import { business } from "@/content/site-config";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Impressum",
   description: "Impressum - Rechtliche Angaben zu Rescue Smart.",
-};
+  path: "/impressum",
+});
 
 export default function ImpressumPage() {
   return (
     <div className="px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-3xl">
-        <h1 className="text-3xl font-bold text-slate-900 sm:text-4xl">
+        <h1 className="font-display text-3xl font-bold text-primary-800 sm:text-4xl">
           Impressum
         </h1>
 
@@ -26,23 +29,23 @@ export default function ImpressumPage() {
               <div>
                 <dt className="font-medium text-slate-700">Adresse</dt>
                 <dd>
-                  Wolfratshauser Str. 15
+                  {business.streetAddress}
                   <br />
-                  8235 Berg, Deutschland
+                  {business.postalCode} {business.addressLocality}, Deutschland
                 </dd>
               </div>
               <div>
                 <dt className="font-medium text-slate-700">Telefon</dt>
-                <dd>+49 (0) 817 148 088 56</dd>
+                <dd>{business.telephoneDisplay}</dd>
               </div>
               <div>
                 <dt className="font-medium text-slate-700">E-Mail</dt>
                 <dd>
                   <a
-                    href="mailto:rescuesmart@anabellehofner.de"
+                    href={`mailto:${business.email}`}
                     className="text-primary-700 hover:underline"
                   >
-                    rescuesmart@anabellehofner.de
+                    {business.email}
                   </a>
                 </dd>
               </div>

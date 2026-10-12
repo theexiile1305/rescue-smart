@@ -1,21 +1,48 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { courseList } from "@/content/courses";
 
 const navLinks = [
   { href: "/", label: "Startseite" },
-  { href: "/#leistungen", label: "Leistungen" },
-  { href: "/about", label: "Über uns" },
-  { href: "/contact", label: "Kontakt" },
+  { href: "/einsatzgebiet", label: "Einsatzgebiet" },
+  { href: "/ratgeber", label: "Ratgeber" },
+  { href: "/ueber-uns", label: "Über uns" },
+  { href: "/kontakt", label: "Kontakt" },
 ];
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const servicesRef = useRef<HTMLLIElement>(null);
+
+  useEffect(() => {
+    if (!isServicesOpen) return;
+
+    function handlePointerDown(event: MouseEvent) {
+      if (!servicesRef.current?.contains(event.target as Node)) {
+        setIsServicesOpen(false);
+      }
+    }
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setIsServicesOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isServicesOpen]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-40 border-b border-sand-300 bg-paper/95 backdrop-blur-sm">
       <nav
         aria-label="Hauptnavigation"
         className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8"
@@ -33,7 +60,58 @@ export function Navbar() {
 
         {/* Desktop nav */}
         <ul className="hidden items-center gap-6 md:flex">
-          {navLinks.map((link) => (
+          <li>
+            <Link
+              href="/"
+              className="text-sm font-medium text-slate-600 transition-colors hover:text-primary-700"
+            >
+              Startseite
+            </Link>
+          </li>
+          <li className="relative" ref={servicesRef}>
+            <button
+              type="button"
+              aria-expanded={isServicesOpen}
+              aria-controls="services-menu"
+              className="flex items-center gap-1 text-sm font-medium text-slate-600 transition-colors hover:text-primary-700"
+              onClick={() => setIsServicesOpen((open) => !open)}
+            >
+              Leistungen
+              <svg
+                className={`h-4 w-4 transition-transform duration-200 ${isServicesOpen ? "rotate-180" : ""}`}
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+            </button>
+            {isServicesOpen && (
+              <ul
+                id="services-menu"
+                className="absolute left-0 top-full mt-2 w-72 rounded-xl border border-sand-300 bg-white p-2 shadow-lg"
+              >
+                {courseList.map((course) => (
+                  <li key={course.slug}>
+                    <Link
+                      href={`/${course.slug}`}
+                      className="block rounded-lg px-3 py-2 text-sm text-slate-700 transition-colors hover:bg-paper-muted hover:text-primary-700"
+                      onClick={() => setIsServicesOpen(false)}
+                    >
+                      {course.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+          {navLinks.slice(1).map((link) => (
             <li key={link.href}>
               <Link
                 href={link.href}
@@ -51,7 +129,7 @@ export function Navbar() {
           aria-expanded={isOpen}
           aria-controls="mobile-menu"
           aria-label={isOpen ? "Menü schließen" : "Menü öffnen"}
-          className="inline-flex items-center justify-center rounded-md p-2 text-slate-600 hover:bg-slate-100 md:hidden"
+          className="inline-flex items-center justify-center rounded-md p-2 text-slate-600 hover:bg-paper-muted md:hidden"
           onClick={() => setIsOpen(!isOpen)}
         >
           <svg
@@ -81,13 +159,36 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div id="mobile-menu" className="border-t border-slate-200 md:hidden">
+        <div id="mobile-menu" className="border-t border-sand-300 md:hidden">
           <ul className="space-y-1 px-4 py-3">
-            {navLinks.map((link) => (
+            <li>
+              <Link
+                href="/"
+                className="block rounded-md px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-paper-muted hover:text-primary-700"
+                onClick={() => setIsOpen(false)}
+              >
+                Startseite
+              </Link>
+            </li>
+            <li className="px-3 pt-3 font-mono text-xs uppercase tracking-wider text-slate-600">
+              Leistungen
+            </li>
+            {courseList.map((course) => (
+              <li key={course.slug}>
+                <Link
+                  href={`/${course.slug}`}
+                  className="block rounded-md px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-paper-muted hover:text-primary-700"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {course.name}
+                </Link>
+              </li>
+            ))}
+            {navLinks.slice(1).map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="block rounded-md px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-primary-700"
+                  className="block rounded-md px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-paper-muted hover:text-primary-700"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}

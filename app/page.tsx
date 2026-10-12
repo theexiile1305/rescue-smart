@@ -1,61 +1,19 @@
-import { CourseCard } from "@/components/icons/CourseCard";
-import { FaqSection } from "@/components/FaqSection";
+import type { Metadata } from "next";
 import Link from "next/link";
-import HardHatIcon from "@/components/icons/HardHatIcon";
-import RefreshIcon from "@/components/icons/RefreshIcon";
-import BoltIcon from "@/components/icons/BoltIcon";
-import CarIcon from "@/components/icons/CarIcon";
+import { CourseCard } from "@/components/icons/CourseCard";
+import { Faq } from "@/components/Faq";
+import { buildMetadata } from "@/lib/metadata";
+import { courseList } from "@/content/courses";
+import { testimonials } from "@/content/testimonials";
+import { globalFaq } from "@/content/faq";
+import { iconMap } from "@/components/icons";
 
-const services = [
-  {
-    title: "Ausbildung betriebliche Ersthelfende",
-    description:
-      "DGUV-konforme Grundausbildung für Ersthelfende in Unternehmen. Vermittelt alle notwendigen Kenntnisse zur Erstversorgung bei Arbeitsunfällen.",
-    features: [
-      "DGUV Vorschrift 1 konform",
-      "9 Unterrichtseinheiten",
-      "Zertifikat am selben Tag",
-      "Inhouse-Schulung möglich",
-    ],
-    icon: <HardHatIcon />,
-  },
-  {
-    title: "Fortbildung betriebliche Ersthelfende",
-    description:
-      "Auffrischung und Vertiefung der Kenntnisse für bereits ausgebildete betriebliche Ersthelfende. Pflicht alle 2 Jahre gemäß DGUV.",
-    features: [
-      "Alle 2 Jahre erforderlich",
-      "9 Unterrichtseinheiten",
-      "Aktuelle Richtlinien",
-      "Flexible Termine",
-    ],
-    icon: <RefreshIcon />,
-  },
-  {
-    title: "Erste Hilfe für Führerschein",
-    description:
-      "Pflicht-Kurs für alle Führerscheinklassen gemäß § 19 FeV. Vermittelt grundlegende Kenntnisse für Notfälle im Straßenverkehr und Alltag.",
-    features: [
-      "Für alle Führerscheinklassen",
-      "9 Unterrichtseinheiten",
-      "Sofortige Bescheinigung",
-      "Wochenendtermine verfügbar",
-    ],
-    icon: <CarIcon />,
-  },
-  {
-    title: "AED-Simulation & Notfalltraining",
-    description:
-      "Spezialisierte Schulungen für medizinische Einrichtungen, Feuerwehr und Organisationen mit besonderen Anforderungen.",
-    features: [
-      "AED-Bedienung praxisnah",
-      "Für medizinische Einrichtungen",
-      "Notfallszenarien-Training",
-      "Individuelle Inhalte",
-    ],
-    icon: <BoltIcon />,
-  },
-];
+export const metadata: Metadata = buildMetadata({
+  title: "Erste-Hilfe-Kurse Starnberg & München",
+  description:
+    "DGUV- und FeV-konforme Erste-Hilfe-Kurse für Unternehmen und Privatpersonen in Starnberg, München und Umgebung. Praxisnah, zertifiziert, gleich anfragen.",
+  path: "/",
+});
 
 const whyRescueSmart = [
   {
@@ -90,81 +48,29 @@ const whyRescueSmart = [
   },
 ];
 
-const testimonials = [
-  {
-    quote:
-      "Die Inhouse-Schulung von RescueSmart war hervorragend. Unsere Mitarbeiter fühlen sich jetzt deutlich sicherer bei der Erstversorgung.",
-    author: "K. Meier",
-    role: "Personalleitung, Fertigungsindustrie, München",
-  },
-  {
-    quote:
-      "Dank der DGUV-konformen Ausbildung sind wir als Unternehmen bestens aufgestellt. Sehr professionelle Trainerin!",
-    author: "T. Wagner",
-    role: "Geschäftsführer, Logistikbranche, München",
-  },
-  {
-    quote:
-      "Praxisnahe Inhalte und flexible Terminplanung. Die Schulung hat unser Team nachhaltig gestärkt. Wir buchen jedes Jahr aufs Neue.",
-    author: "S. Becker",
-    role: "Sicherheitsbeauftragter, Baugewerbe, München",
-  },
-  {
-    quote:
-      "Unsere Pflegekräfte sind nach der Schulung deutlich sicherer im Umgang mit Notfallsituationen. Absolut empfehlenswert!",
-    author: "M. Huber",
-    role: "Pflegedienstleitung, Gesundheitswesen, Augsburg",
-  },
-  {
-    quote:
-      "Endlich eine Erste-Hilfe-Schulung, die wirklich auf unsere Branche eingeht. Realitätsnah, kompetent und sehr gut organisiert.",
-    author: "A. Köhler",
-    role: "Betriebsleitung, Gastronomie, Rosenheim",
-  },
-  {
-    quote:
-      "Unsere Lehrkräfte haben sich sehr sicher gefühlt nach dem Kurs. Die Vermittlung war verständlich und motivierend.",
-    author: "J. Schneider",
-    role: "Schulleitung, Bildungswesen, Landsberg am Lech",
-  },
-  {
-    quote:
-      "Hervorragende Trainerin mit echter Einsatzerfahrung. Die Mitarbeiter waren begeistert und die Inhalte blieben hängen.",
-    author: "F. Wolf",
-    role: "Personalreferent, Fertigungsindustrie, Kaufbeuren",
-  },
-  {
-    quote:
-      "Sehr empfehlenswert! Die Schulung war genau auf unsere Bedürfnisse zugeschnitten und ließ sich perfekt in den Alltag integrieren.",
-    author: "L. Maier",
-    role: "Filialleitung, Einzelhandel, Ingolstadt",
-  },
-  {
-    quote:
-      "Kompetente und einfühlsame Trainerin - das macht den Unterschied. Unser Team fühlt sich jetzt wirklich gut vorbereitet.",
-    author: "C. Braun",
-    role: "Teamleitung, Sozialwesen, Starnberg",
-  },
-];
-
 export default function Home() {
   return (
     <>
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary-800 via-primary-700 to-primary-900 px-4 py-20 text-white sm:px-6 lg:px-8 lg:py-32">
         <div className="mx-auto max-w-4xl text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-            Schnell handeln.{" "}
-            <span className="text-accent-400">Leben retten.</span>
+          <h1 className="font-display text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+            Erste Hilfe, die im{" "}
+            <span className="text-accent-400">Ernstfall wirklich sitzt</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-primary-100">
-            Exzellente Erste-Hilfe-Ausbildung für Unternehmen &amp;
-            Organisationen. Konforme Kurse nach DGUV sowie FeV aus der Praxis
-            für die Praxis.
+            Rescue Smart bietet DGUV- und FeV-konforme Erste-Hilfe-Ausbildung
+            für Unternehmen, Fahrschüler und Organisationen in Starnberg,
+            München und ganz Oberbayern. Ob betriebliche Ersthelfer-Ausbildung,
+            Fortbildung, Führerschein-Pflichtkurs oder AED-Training: Sie lernen
+            bei einer Trainerin mit echter Einsatzerfahrung als
+            Rettungssanitäterin. Kurse mit 9 Unterrichtseinheiten, Zertifikat am
+            selben Tag, maximal 20 Teilnehmenden pro Gruppe und barrierefreiem
+            Zugang in Berg bei Starnberg oder direkt bei Ihnen im Unternehmen.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
-              href="/contact"
+              href="/kontakt"
               className="inline-block rounded-lg bg-accent-600 px-8 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-200 hover:bg-accent-700 hover:shadow-xl"
             >
               Anfrage senden
@@ -183,8 +89,8 @@ export default function Home() {
       <section id="leistungen" className="px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
-              Unsere Leistungen
+            <h2 className="font-display text-3xl font-bold text-primary-800 sm:text-4xl">
+              Erste-Hilfe-Kurse in Starnberg, München und der Region
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-slate-600">
               Von der betrieblichen Ersthelfer-Ausbildung bis zum
@@ -193,24 +99,32 @@ export default function Home() {
             </p>
           </div>
           <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {services.map((kurs) => (
-              <CourseCard
-                key={kurs.title}
-                title={kurs.title}
-                description={kurs.description}
-                features={kurs.features}
-                icon={kurs.icon}
-              />
-            ))}
+            {courseList.map((course) => {
+              const Icon = iconMap[course.icon];
+              return (
+                <Link
+                  key={course.slug}
+                  href={`/${course.slug}`}
+                  className="block"
+                >
+                  <CourseCard
+                    title={course.name}
+                    description={courseDescriptions[course.id]}
+                    features={courseFeatures[course.id]}
+                    icon={<Icon />}
+                  />
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* Warum Rescue Smart? */}
-      <section className="bg-slate-50 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <section className="bg-paper-muted px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
+            <h2 className="font-display text-3xl font-bold text-primary-800 sm:text-4xl">
               Warum Rescue Smart?
             </h2>
           </div>
@@ -236,7 +150,7 @@ export default function Home() {
       <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
+            <h2 className="font-display text-3xl font-bold text-primary-800 sm:text-4xl">
               Das sagen unsere Kunden
             </h2>
           </div>
@@ -244,39 +158,52 @@ export default function Home() {
             {testimonials.map((t) => (
               <blockquote
                 key={t.author}
-                className="rounded-2xl bg-slate-50 p-6"
+                className="rounded-2xl bg-paper-muted p-6"
               >
                 <p className="text-sm leading-relaxed text-slate-600">
                   &ldquo;<i>{t.quote}</i>&rdquo;
                 </p>
                 <footer className="mt-4">
-                  <p className="text-sm font-semibold text-slate-900">
+                  <p className="text-sm font-semibold text-primary-800">
                     {t.author}
                   </p>
-                  <p className="text-xs text-slate-500">{t.role}</p>
+                  <p className="text-xs text-slate-600">{t.role}</p>
                 </footer>
               </blockquote>
             ))}
           </div>
+          <p className="mt-8 text-center text-sm text-slate-600">
+            Ihre Stadt ist nicht dabei?{" "}
+            <Link
+              href="/einsatzgebiet"
+              className="font-medium text-primary-700 underline hover:text-primary-800"
+            >
+              Zu unserem Einsatzgebiet
+            </Link>
+          </p>
         </div>
       </section>
 
       {/* FAQ */}
-      <FaqSection />
+      <Faq items={globalFaq} heading="Häufig gestellte Fragen" id="faq" />
 
       {/* CTA */}
       <section className="bg-primary-800 px-4 py-16 text-white sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-2xl font-bold sm:text-3xl">
+          <h2 className="font-display text-2xl font-bold sm:text-3xl">
             Bereit für Ihre Erste-Hilfe-Ausbildung?
           </h2>
           <p className="mt-4 text-primary-100">
             Kontaktieren Sie uns für ein individuelles Angebot. Egal ob
-            Inhouse-Schulung, offener Kurs oder Ihrenn individullen
-            Anforderungen.
+            Inhouse-Schulung, offener Kurs oder Ihren individuellen
+            Anforderungen. Mehr Hintergrundwissen finden Sie in unserem{" "}
+            <Link href="/ratgeber" className="underline hover:text-white">
+              Ratgeber
+            </Link>
+            .
           </p>
           <Link
-            href="/contact"
+            href="/kontakt"
             className="mt-8 inline-block rounded-lg bg-accent-600 px-8 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-200 hover:bg-accent-700 hover:shadow-xl"
           >
             Jetzt anfragen
@@ -286,3 +213,40 @@ export default function Home() {
     </>
   );
 }
+
+const courseDescriptions: Record<string, string> = {
+  ausbildung:
+    "DGUV-konforme Grundausbildung für Ersthelfende in Unternehmen. Vermittelt alle notwendigen Kenntnisse zur Erstversorgung bei Arbeitsunfällen.",
+  fortbildung:
+    "Auffrischung und Vertiefung der Kenntnisse für bereits ausgebildete betriebliche Ersthelfende. Pflicht alle 2 Jahre gemäß DGUV.",
+  fuehrerschein:
+    "Pflicht-Kurs für alle Führerscheinklassen gemäß § 19 FeV. Vermittelt grundlegende Kenntnisse für Notfälle im Straßenverkehr und Alltag.",
+  aed: "Spezialisierte Schulungen für medizinische Einrichtungen, Feuerwehr und Organisationen mit besonderen Anforderungen.",
+};
+
+const courseFeatures: Record<string, string[]> = {
+  ausbildung: [
+    "DGUV Vorschrift 1 konform",
+    "9 Unterrichtseinheiten",
+    "Zertifikat am selben Tag",
+    "Inhouse-Schulung möglich",
+  ],
+  fortbildung: [
+    "Alle 2 Jahre erforderlich",
+    "9 Unterrichtseinheiten",
+    "Aktuelle Richtlinien",
+    "Flexible Termine",
+  ],
+  fuehrerschein: [
+    "Für alle Führerscheinklassen",
+    "9 Unterrichtseinheiten",
+    "Sofortige Bescheinigung",
+    "Wochenendtermine verfügbar",
+  ],
+  aed: [
+    "AED-Bedienung praxisnah",
+    "Für medizinische Einrichtungen",
+    "Notfallszenarien-Training",
+    "Individuelle Inhalte",
+  ],
+};
