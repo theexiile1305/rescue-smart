@@ -12,16 +12,16 @@
   --color-primary-800: #1e40af;
   --color-primary-900: #1e3a8a;
 
-  --color-accent-50: #fef2f2;
-  --color-accent-100: #fee2e2;
-  --color-accent-200: #fecaca;
-  --color-accent-300: #fca5a5;
-  --color-accent-400: #f87171;
-  --color-accent-500: #ef4444;
-  --color-accent-600: #dc2626;
-  --color-accent-700: #b91c1c;
-  --color-accent-800: #991b1b;
-  --color-accent-900: #7f1d1d;
+  --color-accent-50: #fdf3f2;
+  --color-accent-100: #fbe5e3;
+  --color-accent-200: #f8cdc9;
+  --color-accent-300: #f1a49d;
+  --color-accent-400: #e7695e;
+  --color-accent-500: #dd4a3d;
+  --color-accent-600: #d5392c;
+  --color-accent-700: #b32c21;
+  --color-accent-800: #932a21;
+  --color-accent-900: #782822;
 }
 
 html {

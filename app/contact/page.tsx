@@ -106,7 +106,7 @@ export default function ContactPage() {
             </p>
           )}
           {status === "error" && (
-            <p className="text-sm text-red-600">
+            <p className="text-sm text-accent-600">
               Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es
               erneut.
             </p>
